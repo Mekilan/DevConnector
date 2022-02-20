@@ -575,3 +575,8 @@ button {
     padding: 0.3rem 0.4rem;
   }
 }
+
+.not-ftxt{
+  text-align: center;
+  margin-top: 100px;
+}

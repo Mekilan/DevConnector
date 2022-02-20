@@ -6,6 +6,10 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Dashboard from "./components/dashboard/dashboard";
 import Alert from "./components/layouts/Alert";
+import NotFound from "./components/layouts/NotFound";
+import CreateProfile from "./components/layouts/profile-forms/CreateProfile";
+import EditProfile from "./components/layouts/profile-forms/EditProfile";
+import history from "./components/history";
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -24,7 +28,7 @@ const App = () => {
   }, []);
   return (
     <Provider store={store}>
-      <Router>
+      <Router history={history}>
         <Fragment>
           <Navbar />
           <Routes>
@@ -35,7 +39,8 @@ const App = () => {
             <Routes>
               <Route exact path="/register" element={<Register />} />
               <Route exact path="/login" element={<Login />} />
-              <Route exact
+              <Route
+                exact
                 path="/dashboard"
                 element={
                   <PrivateRoute>
@@ -43,6 +48,25 @@ const App = () => {
                   </PrivateRoute>
                 }
               />
+              <Route
+                exact
+                path="/create-profile"
+                element={
+                  <PrivateRoute>
+                    <CreateProfile />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                exact
+                path="/edit-profile"
+                element={
+                  <PrivateRoute>
+                    <EditProfile />
+                  </PrivateRoute>
+                }
+              />
+              <Route path="*" element={<NotFound />}></Route>
             </Routes>
           </section>
         </Fragment>

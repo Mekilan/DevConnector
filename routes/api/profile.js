@@ -18,8 +18,9 @@ router.get('/me', auth, async (req, res) => {
       ['name', 'avatar']
     );
     if (!profile) {
-      return res.status(400).json({ msg: 'There is no profile for this user' });
+      return res.status(404).json({errors: [{ msg: 'There is no profile for this user' }]});
     }
+    return res.json(profile);
   } catch (e) {
     console.error(e.message);
     return res.status(500).send('Server Error');
@@ -48,7 +49,7 @@ router.post(
       company,
       website,
       location,
-      handle,
+      //handle,
       bio,
       status,
       githubusername,
@@ -63,7 +64,7 @@ router.post(
     //Build Profile Object
     const profileFields = {};
     profileFields.user = req.user.id;
-    if (handle) profileFields.handle = handle;
+    //if (handle) profileFields.handle = handle;
     if (company) profileFields.company = company;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
