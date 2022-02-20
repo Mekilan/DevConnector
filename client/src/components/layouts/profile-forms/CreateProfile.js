@@ -44,7 +44,6 @@ const CreateProfile = ({ ProfileCreation,edit }) => {
       [e.target.name]: e.target.value,
     });
   const profileSubmit = async (e) => {
-    debugger;
     e.preventDefault();
     await ProfileCreation(formData);
     if(!edit)

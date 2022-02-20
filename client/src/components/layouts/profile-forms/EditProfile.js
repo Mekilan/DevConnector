@@ -43,7 +43,7 @@ const EditProfile = ({
       youtube: loading || !profile.youtube ? "" : profile.youtube,
       instagram: loading || !profile.instagram ? "" : profile.instagram,
     });
-  }, [loading]);
+  }, [loading,getCurrentProfile]);
   const {
     company,
     website,
@@ -65,7 +65,6 @@ const EditProfile = ({
       [e.target.name]: e.target.value,
     });
   const profileSubmit = async (e) => {
-    debugger;
     e.preventDefault();
     await ProfileCreation(formData,true);
     if (!edit) {
