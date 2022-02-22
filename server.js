@@ -13,7 +13,6 @@ app.use(express.json({ extend: false }));
 app.use(cors({ origin: "https://localhost:5000" }));
 //Test API Running Check
 
-app.get("/", (req, res) => res.send("API Running"));
 
 //Define API Router connection
 app.use("/api/auth", require("./routes/api/auth"));
