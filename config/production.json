@@ -1,0 +1,6 @@
+{
+    "mongoURI":"mongodb+srv://Mekilan:Mekilan2594@devconnectordb.o4z5q.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtToken":"12345678",
+    "githubclientId":"d5be3eb799d7760053c4",
+    "githubSecretId":"b50fee1aef60e611e983b7439a82604d04172f2f"
+}
